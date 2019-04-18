@@ -1,25 +1,3 @@
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<head>
-	<title>json</title>
-</head>
-<body>
-	<div>
-		<textarea id="textarea" style="resize:none;">
-			
-		</textarea>
-	</div>
-	<div style="position:relative;width:100px;height:50px;" >
-		<input name="key" type="text" id="className" value="请输入类名" size="30"   
-		style="color:#000000" />
-		<input name="key" type="text" id="classBy" value="Create By" size="30"   
-		style="color:#000000" />
-
-		<button type="button" onclick="produce()">生成</button>
-	</div>
-</body>
-<script language="javascript">
-
 //生成类
 function produce() {
 
@@ -119,7 +97,7 @@ function parseJsonModel(classStr,obj) {
 				if (itemType == "object") {
 					var keyArrayName = firstUpperCase(key)
 
-					classStr += "@property (nonatomic, copy) NSArray<LJArray"+kkeyArrayNameey+"Model> *" + key + ';\n'
+					classStr += "@property (nonatomic, copy) NSArray<LJArray"+keyArrayName+"Model> *" + key + ';\n'
 					classStr += "@end\n\n"
 					classStr += "@interface LJArray"+keyArrayName+"Model : NSObject\n"
 					classArray.push("LJArray" + keyArrayName + "Model")
@@ -209,6 +187,3 @@ function getClassImplementation() {
 	}
 	return classStr;
 }
-
-</script>
-</html>
